@@ -28,7 +28,7 @@ app.get('/create', (req, res)=>{
     res.render('create')
 })
 
-app.get('/404', (req, res)=>{
+app.get('*', (req, res)=>{
     res.render('404')
 })
 
