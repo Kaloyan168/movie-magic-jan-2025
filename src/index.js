@@ -15,8 +15,17 @@ app.get('/', (req, res) => {
     res.render('home')
 });
 
-// app.get('/about', (req, res)=>{
-//     res.render
-// })
+app.get('/about', (req, res)=>{
+    res.render('about')
+})
+
+app.get('/search', (req, res)=>{
+    res.render('search')
+})
+
+
+app.get('/create', (req, res)=>{
+    res.render('create')
+})
 
 app.listen(5000, () => console.log('http://localhost:5000...'))
