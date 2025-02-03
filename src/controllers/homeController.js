@@ -11,14 +11,4 @@ routes.get('/about', (req, res)=>{
     res.render('about')
 })
 
-routes.get('/search', (req, res)=>{
-    res.render('search')
-})
-
-
-routes.get('/create', (req, res)=>{
-    res.render('create')
-})
-
-
 export default routes;
