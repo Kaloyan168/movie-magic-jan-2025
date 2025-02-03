@@ -7,7 +7,7 @@ export default [
     imageUrl: '/static/img/jungle-cruise.jpeg',
     director: ' Kobrat gorski',
     year: 'Yaj mi huq',
-    rating: '4',
+    rating: 4,
     category: 'movie',
 },{
     id: '2',
@@ -17,7 +17,7 @@ export default [
     imageUrl: 'https://resizing.flixster.com/wgzK12s6HU9tTH0ChP_5eGy4c3Y=/206x305/v2/https://resizing.flixster.com/csfX8Ezg8smfPo1IBliNxACEJCA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZGFkOGYxYjgtZDU0ZS00OGIwLTk1NjktMmNjNzA1YTdkNjBiLmpwZw==',
     director: 'Petko gorski',
     year: '6969',
-    rating: '5',
+    rating: 5,
     category: 'serie'
   } 
 ]
