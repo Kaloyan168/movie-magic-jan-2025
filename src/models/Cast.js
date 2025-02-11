@@ -3,7 +3,7 @@ import { Schema, model } from 'mongoose'
 const castSchema = new Schema({
     name: String,
     age: Number,
-    borm: String,
+    born: String,
     imageUrl: String,
 
 })
