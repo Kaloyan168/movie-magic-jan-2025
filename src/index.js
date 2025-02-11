@@ -9,14 +9,13 @@ const app = express();
 //db config 
 
 try{
-    const url = 'mongodb://localhost:270117/magic-movies-jan2025'
-    await mongoose.connect(url)
+    const uri = 'mongodb://localhost:27017/magic-movies-jan2025'
+    await mongoose.connect(uri)
     console.log('Db connected succesfully');
     
 } catch(err) {
     console.log('Cannot connect to db');
     console.error(err.message)
-    
 }
 
 
@@ -25,6 +24,9 @@ try{
 
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+    },
     helpers: {
         showRating: showRatingHelper,
     }
