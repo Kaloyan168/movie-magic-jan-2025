@@ -1,20 +1,20 @@
 import Movie from '../models/Movie.js';
 
 export default {
-    getAll(filter = {}){
+    getAll(filter = {}) {
         let query = Movie.find({});
-        if(filter.search){
+        if (filter.search) {
             // TODO fix partial case insensitive search
-            query = query.where({title: filter.search});
+            query = query.where({ title: filter.search });
         };
 
-        if(filter.genre) {
+        if (filter.genre) {
             // TODO: add case insensitive search
-            query = query.where({genre: filter.genre});
+            query = query.where({ genre: filter.genre });
         }
 
-        if(filter.year) {
-            query = query.where({year: Number(filter.year)});
+        if (filter.year) {
+            query = query.where({ year: Number(filter.year) });
         }
         return query;
     },
@@ -25,18 +25,25 @@ export default {
     getOneWithCasts(movieId) {
         return this.getOne(movieId).populate('casts')
     },
-    create(movieData){
-        const result  = Movie.create({
+    create(movieData) {
+        const result = Movie.create({
             ...movieData,
-            rating: Number(movieData.rating),  
-            year: Number(movieData.year)   
+            rating: Number(movieData.rating),
+            year: Number(movieData.year)
         });
-        
+
         return result;
     },
-    async attachCast(movieId, castId){
-        const movie = await Movie.findById(movieId)
-        movie.casts.push(castId)
-        await movie.save()
+    async attachCast(movieId, castId) {
+        //* Attach 1
+        // const movie = await Movie.findById(movieId)
+        // if(movie.casts.includes(castId)){
+        //     return;
+        // }
+        // movie.casts.push(castId)
+        // await movie.save()
+        // return movie;
+        //* Attach 2
+        return Movie.findByIdAndUpdate(movieId, {$push: {casts: castId}});
     }
 }
